@@ -15,7 +15,7 @@ const Header = () => {
                 >
                 <h1>SaludThon</h1>
                 </section>
-                <picture id="wave" style={{ height: "150px", overflow: "hidden" }}>
+                <picture id="wave" style={{ height: "400px", overflow: "hidden" }}>
                 </picture>
             </header>
         </>

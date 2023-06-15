@@ -1,0 +1,45 @@
+/* Estilos para la gráfica */
+.bar-chart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para los dropdowns */
+  .dropdown-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .label-select {
+    margin-right: 10px;
+  }
+  
+  .select {
+    padding: 5px;
+    font-size: 14px;
+  }
+  
+  /* Estilos adicionales */
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  article {
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
