@@ -66,9 +66,9 @@ ul{ /* Quita los puntos que por defecto da la clase ul */
     height: 300px;
     background: var(--color_bajo);
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, var(--color_alto), var(--color_medio)), url(../img/portada.jpg);
+    background: -webkit-linear-gradient(to right, var(--color_alto), var(--color_medio)), url(../img/portada1.jpg);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, var(--color_alto), var(--color_medio)), url(../img/portada.jpg);
+    background: linear-gradient(to right, var(--color_alto), var(--color_medio)), url(../img/portada1.jpg);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-size: cover;
     background-attachment: fixed;
