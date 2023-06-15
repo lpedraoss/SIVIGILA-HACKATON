@@ -1,4 +1,4 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import UseDiccionario from './data/diccionarios/rutina';
 import Header from './components/pure/header';
@@ -19,7 +19,7 @@ const App = () => {
 
       return filtro;
     }
-    
+
 
     );
     setDatosFiltrados(filtrarDatos);
@@ -35,7 +35,23 @@ const App = () => {
     <>
       <Header />
       <main>
-      <BarChartComponent data={datosFiltrados} />
+        <BarChartComponent data={datosFiltrados} />
+        <>
+
+          <div  >
+            <label htmlFor="typeEvent">Selecciona un evento:</label>
+            <select id="typeEvent" value={typeEvent} onChange={handleTypeEventChange}>
+              <option value={EVENTO.DENGUE}>Dengue</option>
+              <option value={EVENTO.HEPATITIS_A}>Hepatitis A</option>
+            </select>
+            <label htmlFor="typeEvent">Selecciona un departamento:</label>
+            <select id="typeDepto" value={typeDepto} onChange={handleTypeDeptoChange}>
+              <option value={DEPARTAMENTO.BOGOTA}>Bogota</option>
+              <option value={DEPARTAMENTO.ANTIOQUIA}>Antioquia</option>
+              <option value={DEPARTAMENTO.ATLANTICO}>Antlantico</option>
+            </select>
+          </div>
+        </>
         <article id="contenedor_producto">
           <ul id="productos">
             {datosFiltrados.map((dato) => (
@@ -45,25 +61,10 @@ const App = () => {
               </li>
             ))}
           </ul>
-          <> 
-             
-          <div  >
-             <label  htmlFor="typeEvent">Selecciona un evento:</label>
-             <select id="typeEvent" value={typeEvent} onChange={handleTypeEventChange}>
-               <option value={EVENTO.DENGUE}>Dengue</option>
-               <option value={EVENTO.HEPATITIS_A}>Hepatitis A</option>
-             </select>
-             <label htmlFor="typeEvent">Selecciona un departamento:</label>
-             <select id="typeDepto" value={typeDepto} onChange={handleTypeDeptoChange}>
-               <option value={DEPARTAMENTO.BOGOTA}>Bogota</option>
-               <option value={DEPARTAMENTO.ANTIOQUIA}>Antioquia</option>
-               <option value={DEPARTAMENTO.ATLANTICO}>Antlantico</option>
-             </select>
-           </div> 
-         </>
+
         </article>
 
-         
+
 
       </main>
     </>
