@@ -1,23 +1,15 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
-const BarChartComponent = () => {
-  const data = [
-    { name: 'Enero', ventas: 12 },
-    { name: 'Febrero', ventas: 19 },
-    { name: 'Marzo', ventas: 3 },
-    { name: 'Abril', ventas: 5 },
-    { name: 'Mayo', ventas: 2 },
-    { name: 'Junio', ventas: 3 },
-  ];
-
+// eslint-disable-next-line react/prop-types
+const BarChartComponent = ({ data }) => {
   return (
     <BarChart width={500} height={300} data={data}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
-      <YAxis />
+      <XAxis dataKey="nomEve" />
+      <YAxis domain={[0, 'auto']} />
       <Tooltip />
       <Legend />
-      <Bar dataKey="ventas" fill="#8884d8" />
+      <Bar dataKey="grandTotal" fill="#8884d8" />
     </BarChart>
   );
 };

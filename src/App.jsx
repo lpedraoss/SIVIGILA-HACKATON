@@ -1,31 +1,22 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-
 import { useEffect, useState } from 'react';
-import './App.css'
-import UseDiccionario from './data/diccionarios/rutina'
+import './App.css';
+import UseDiccionario from './data/diccionarios/rutina';
 import Header from './components/pure/header';
-
 import BarChartComponent from './components/pure/grafico';
 
 function App() {
   const { rutina } = UseDiccionario();
-  const [state, setstate] = useState([]);
+  const [datosFiltrados, setDatosFiltrados] = useState([]);
+  const [mostrarGrafico, setMostrarGrafico] = useState(false);
 
   useEffect(() => {
-    setstate(rutina);
+    const filtrarDatos = rutina.filter((dato) => dato.codDptoO === 0);
+    setDatosFiltrados(filtrarDatos);
   }, [rutina]);
-//chartjs === graficar en  js
-  // Filtrar los datos por ciertas cantidades
-  const datosFiltrados = rutina.filter((dato) => {
-    let codeDpto = dato.codDptoO === 5
-
-    return  codeDpto;
-  });
 
   return (
     <>
-      <Header></Header>
+      <Header />
       <main>
         <article id="contenedor_producto">
           <ul id="productos">
@@ -38,12 +29,13 @@ function App() {
             ))}
           </ul>
         </article>
-        <BarChartComponent></BarChartComponent>        
+        <button onClick={() => setMostrarGrafico(!mostrarGrafico)}>
+          Mostrar/ocultar gráfico
+        </button>
+        {mostrarGrafico && <BarChartComponent data={datosFiltrados} />}
       </main>
-
-
     </>
-  )
+  );
 }
 
-export default App
+export default App;
