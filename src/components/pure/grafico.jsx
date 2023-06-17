@@ -8,11 +8,11 @@ const BarChartComponent = () => {
   return (
     <BarChart width={500} height={300} data={datosFiltrados}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="nomEve" />
-      <YAxis domain={[0, 'auto']} />
+      <XAxis dataKey="nomEve" label={{ value: 'Evento', position: 'insideBottom' }} />
+      <YAxis domain={[0, 'auto']} label={{ value: 'Casos', angle: -90, position: 'insideLeft' }} labelOffset={20} />
       <Tooltip />
       <Legend />
-      <Bar dataKey="grandTotal" fill="#8884d8" />
+      <Bar dataKey="grandTotal" fill="#8884d8" name='casos' />
     </BarChart>
   );
 };
