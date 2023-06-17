@@ -6,9 +6,9 @@ import FilterDataContext from '../../feature/filter_data/context/filter_data_con
 const BarChartComponent = () => {
   const { datosFiltrados } = useContext(FilterDataContext);
   return (
-    <BarChart width={500} height={300} data={datosFiltrados}>
+    <BarChart width={1000} height={450} data={datosFiltrados}>
       <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="nomEve" label={{ value: 'Evento', position: 'insideBottom' }} />
+      <XAxis dataKey="nomEve" tick={false} label={{ value: 'Evento', position: 'insideBottom' }} />
       <YAxis domain={[0, 'auto']} label={{ value: 'Casos', angle: -90, position: 'insideLeft' }} labelOffset={20} />
       <Tooltip />
       <Legend />
